@@ -149,10 +149,4 @@ src/
 - Export full analysis as Markdown
 - Optional meeting context for better AI accuracy
 
----
 
-## Built by
-
-**Lingges Muniandy** — Software Engineering graduate, USM Penang  
-Portfolio: [hemwaren.my](https://hemwaren.my) → replace with your portfolio  
-GitHub: [github.com/Hemwaren](https://github.com/Hemwaren)
