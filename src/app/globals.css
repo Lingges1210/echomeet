@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* EchoMeet dark theme — deep ocean teal */
+    --background: 220 26% 7%;
+    --foreground: 210 40% 96%;
+    --card: 220 24% 10%;
+    --card-foreground: 210 40% 96%;
+    --popover: 220 24% 10%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 174 80% 40%;        /* echo teal */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 210 40% 80%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 38 92% 55%;           /* amber accent */
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 96%;
+    --border: 220 20% 16%;
+    --input: 220 20% 14%;
+    --ring: 174 80% 40%;
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+
+/* Shimmer loading effect */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(220 20% 20%) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Teal glow effect for active elements */
+.echo-glow {
+  box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.2),
+              0 4px 20px rgba(20, 184, 166, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #14b8a6, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Typing indicator */
+.typing-dot {
+  animation: pulse2 1.4s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Priority badge pulse */
+.priority-high { animation: pulse2 2s ease-in-out infinite; }
+
+/* Smooth transitions */
+.transition-smooth { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }

@@ -1,0 +1,49 @@
+EchoMeet — Full Next.js App Structure
+======================================
+echomeet/
+├── .env.local.example
+├── .gitignore
+├── README.md
+├── next.config.js
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+├── tsconfig.json
+├── components.json          (shadcn/ui config)
+├── public/
+│   └── favicon.ico (placeholder)
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx              (landing/home)
+│   │   ├── globals.css
+│   │   ├── analyze/
+│   │   │   └── page.tsx          (main analyze tool)
+│   │   └── api/
+│   │       ├── analyze/
+│   │       │   └── route.ts      (Groq AI route)
+│   │       └── email/
+│   │           └── route.ts      (email draft route)
+│   ├── components/
+│   │   ├── ui/                   (shadcn components)
+│   │   ├── layout/
+│   │   │   ├── Header.tsx
+│   │   │   └── Footer.tsx
+│   │   ├── home/
+│   │   │   ├── Hero.tsx
+│   │   │   ├── HowItWorks.tsx
+│   │   │   └── UseCases.tsx
+│   │   └── analyze/
+│   │       ├── InputPanel.tsx    (paste/upload notes)
+│   │       ├── ResultsPanel.tsx  (structured output)
+│   │       ├── ActionItems.tsx
+│   │       ├── Decisions.tsx
+│   │       ├── OpenQuestions.tsx
+│   │       └── EmailDraft.tsx
+│   ├── lib/
+│   │   ├── groq.ts               (Groq client)
+│   │   ├── prompts.ts            (AI prompts)
+│   │   ├── supabase.ts           (Supabase client)
+│   │   └── utils.ts
+│   └── types/
+│       └── index.ts
